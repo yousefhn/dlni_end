@@ -21,7 +21,7 @@ class _HsState extends State<Hs> {
             colors: [Color(0xff6885e3), Color(0xffffffff)],
             end: Alignment.bottomCenter,
             begin: Alignment.topCenter,
-            stops: [0.3, 1.2]),
+            stops: [0.2, 1.2]),
       ),
       child: Container(
         child: SafeArea(
