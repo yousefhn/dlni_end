@@ -37,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text(
                     'تسجيل الدخول',
                     style: TextStyle(
+                      fontFamily: "Cairo",
                       fontWeight: FontWeight.bold,
                       fontSize: 40,
                       color: Color(0xff202936),
@@ -109,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               filled: true,
                               labelStyle: TextStyle(
+                                fontFamily: "Cairo",
                                 height: 0.5,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 25,
@@ -163,7 +165,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.center,
                                                 children: [
-                                                  Text("تأكد من معلوماتك "),
+                                                  Text(
+                                                    "تأكد من معلوماتك ",
+                                                    style: TextStyle(
+                                                        fontFamily: "Cairo"),
+                                                  ),
                                                   SizedBox(
                                                     height: 20,
                                                   ),
@@ -180,9 +186,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   Container(
                                                     height: 30,
                                                     child: FlatButton(
-                                                      child: Text('نعم'),
+                                                      child: Text(
+                                                        'نعم',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                "Cairo"),
+                                                      ),
                                                       onPressed: () {
-
                                                         Navigator.pushReplacement(
                                                             context,
                                                             MaterialPageRoute(
@@ -211,7 +221,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   Container(
                                                     height: 30,
                                                     child: FlatButton(
-                                                      child: Text('لا'),
+                                                      child: Text(
+                                                        'لا',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                "Cairo"),
+                                                      ),
                                                       onPressed: () {
                                                         Navigator.pop(context);
                                                       },
@@ -245,6 +260,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 "التالي",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
+                                  fontFamily: "Cairo",
                                   fontWeight: FontWeight.bold,
                                   fontSize: 30,
                                   color: Color(0xffffffff),

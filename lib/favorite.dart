@@ -37,7 +37,8 @@ class _FavoritePageState extends State<FavoritePage> {
                   centerTitle: true,
                   title: Text(
                     "الاماكن المفضلة",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    style: TextStyle(
+                        fontFamily: "Cairo", color: Colors.white, fontSize: 30),
                   ),
                   elevation: 0,
                   backgroundColor: Colors.transparent,
@@ -64,6 +65,7 @@ class _FavoritePageState extends State<FavoritePage> {
                           title: Text(
                             "من نحن",
                             style: TextStyle(
+                              fontFamily: "Cairo",
                               fontSize: 25,
                             ),
                           ),

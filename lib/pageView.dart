@@ -22,6 +22,7 @@ class pageView extends StatelessWidget {
           'قم بالإطلاع على جميع الأماكن الموجودة حولك وتعرف على طريق الوصول إليها والمسافة التي تفصلك عنها ',
           textAlign: TextAlign.center,
           style: TextStyle(
+              fontFamily: "Cairo",
               color: Colors.black,
               shadows: [
                 Shadow(
@@ -36,7 +37,11 @@ class pageView extends StatelessWidget {
       image: Image.asset("assets/images/54.png"),
       titleWidget: Text(
         "تعرف على ماحولك",
-        style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic),
+        style: TextStyle(
+          fontFamily: "Cairo",
+          fontSize: 30,
+          fontStyle: FontStyle.italic,
+        ),
       ),
     ),
     PageViewModel(
@@ -55,6 +60,7 @@ class pageView extends StatelessWidget {
           'قم بالإطلاع على جميع الأماكن الموجودة حولك وتعرف على طريق الوصول إليها والمسافة التي تفصلك عنها ',
           textAlign: TextAlign.center,
           style: TextStyle(
+              fontFamily: "Cairo",
               color: Colors.black,
               shadows: [
                 Shadow(
@@ -68,7 +74,8 @@ class pageView extends StatelessWidget {
       ),
       titleWidget: Text(
         "تعرف على ماحولك",
-        style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic),
+        style: TextStyle(
+            fontFamily: "Cairo", fontSize: 30, fontStyle: FontStyle.italic),
       ),
     ),
     // PageViewModel(
@@ -198,6 +205,7 @@ class pageView extends StatelessWidget {
               'قم بالإطلاع على جميع الأماكن الموجودة حولك وتعرف على طريق الوصول إليها والمسافة التي تفصلك عنها ',
               textAlign: TextAlign.center,
               style: TextStyle(
+                  fontFamily: "Cairo",
                   color: Colors.black,
                   shadows: [
                     Shadow(
@@ -216,7 +224,8 @@ class pageView extends StatelessWidget {
           ),
           titleWidget: Text(
             "تعرف على ماحولك",
-            style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic),
+            style: TextStyle(
+                fontFamily: "Cairo", fontSize: 30, fontStyle: FontStyle.italic),
           ),
         ),
         PageViewModel(
@@ -235,6 +244,7 @@ class pageView extends StatelessWidget {
               'قم بالإطلاع على جميع الأماكن الموجودة حولك وتعرف على طريق الوصول إليها والمسافة التي تفصلك عنها ',
               textAlign: TextAlign.center,
               style: TextStyle(
+                  fontFamily: "Cairo",
                   color: Colors.black,
                   shadows: [
                     Shadow(
@@ -248,7 +258,8 @@ class pageView extends StatelessWidget {
           ),
           titleWidget: Text(
             "تعرف على ماحولك",
-            style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic),
+            style: TextStyle(
+                fontFamily: "Cairo", fontSize: 30, fontStyle: FontStyle.italic),
           ),
         ),
         PageViewModel(
@@ -267,6 +278,7 @@ class pageView extends StatelessWidget {
               'قم بالإطلاع على جميع الأماكن الموجودة حولك وتعرف على طريق الوصول إليها والمسافة التي تفصلك عنها ',
               textAlign: TextAlign.center,
               style: TextStyle(
+                  fontFamily: "Cairo",
                   color: Colors.black,
                   shadows: [
                     Shadow(
@@ -280,7 +292,8 @@ class pageView extends StatelessWidget {
           ),
           titleWidget: Text(
             "تعرف على ماحولك",
-            style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic),
+            style: TextStyle(
+                fontFamily: "Cairo", fontSize: 30, fontStyle: FontStyle.italic),
           ),
         ),
       ],
@@ -305,7 +318,7 @@ class pageView extends StatelessWidget {
           ),
         );
       },
-      animationDuration: 350,
+      animationDuration: 250,
       onDone: () {
         Navigator.pushReplacement(
           context,
@@ -341,8 +354,11 @@ class pageView extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            "Skip",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            "تخطي",
+            style: TextStyle(
+                fontFamily: "Cairo",
+                color: Colors.white,
+                fontWeight: FontWeight.bold),
           ),
         ),
       ),
@@ -379,8 +395,11 @@ class pageView extends StatelessWidget {
             ]),
         child: Center(
           child: Text(
-            "Done",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            "انتهى",
+            style: TextStyle(
+                fontFamily: "Cairo",
+                color: Colors.white,
+                fontWeight: FontWeight.bold),
           ),
         ),
       ),

@@ -2,7 +2,7 @@ import 'dart:math' as math;
 
 import 'package:example/splashScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'جهات_الاتصال.dart';
@@ -56,174 +56,134 @@ class _SearchBarDemoHomeState extends State<SearchBarDemoHome> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-        child: Scaffold(
-          extendBody: true,
-          extendBodyBehindAppBar: true,
-          // appBar: AppBar(
-          //   automaticallyImplyLeading: false,
-          //   backgroundColor: Colors.transparent,
-          //   elevation: 0,
-          //   flexibleSpace: SafeArea(
-          //     child: Container(
-          //       child: TextField(
-          //         style: TextStyle(fontSize: 16.0, color: Color(0xff6885e3)),
-          //         //keyboardType: TextInputType.phone,
-          //         //textAlign: TextAlign.right,
-          //         decoration: InputDecoration(
-          //           fillColor: Color(0xffffffff).withOpacity(0.5),
-          //           // enabled: true,
-          //           prefixIcon: Icon(
-          //             Icons.search,
-          //             size: 30,
-          //             color: Color(0xff6885e3),
-          //           ),
-          //           hintText: "إبحث ",
-          //           enabledBorder: OutlineInputBorder(
-          //             borderRadius: BorderRadius.circular(16),
-          //             borderSide: BorderSide(
-          //               width: 2,
-          //               color: Color(0xff6885e3),
-          //             ),
-          //           ),
-          //           focusedBorder: OutlineInputBorder(
-          //             borderRadius: BorderRadius.circular(16),
-          //             borderSide: BorderSide(
-          //               width: 2,
-          //               color: Color(0xff6885e3),
-          //             ),
-          //           ),
-          //           filled: true,
-          //           hintStyle: TextStyle(
-          //             height: 0.5,
-          //             fontWeight: FontWeight.bold,
-          //             fontSize: 25,
-          //             color: Color(0xff6885e3),
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
-          body: SafeArea(
-            child: Container(
-              margin: EdgeInsets.all(10),
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.4),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: TextField(
-                onChanged: (value) => print(value),
-                decoration: InputDecoration(
-                    // contentPadding: EdgeInsets.symmetric(
-                    //   horizontal: (20 / 812.0) * MediaQuery.of(context).size.width,
-                    //   vertical: (20 / 812.0) * MediaQuery.of(context).size.width,
-                    // ),
-
-                    border: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    enabledBorder: InputBorder.none,
-                    hintText: "ابحث",
-                    prefixIcon: Icon(Icons.search)),
-              ),
-            ),
+    return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: true,
+      body: SafeArea(
+        child: Container(
+          margin: EdgeInsets.all(10),
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            color: Colors.grey.withOpacity(0.4),
+            borderRadius: BorderRadius.circular(25),
           ),
-          floatingActionButton: ExpandableFab(
-            distance: 80.0,
-            children: [
-              ActionButton(
-                onPressed: () => _showAction(context, 0),
-                icon: const Icon(Icons.location_on_outlined),
-              ),
-              ActionButton(
-                onPressed: () {
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          elevation: 0.8,
-                          backgroundColor: Colors.white.withOpacity(0.9),
-                          actionsPadding: EdgeInsets.only(bottom: 20),
-                          contentTextStyle:
-                              TextStyle(fontSize: 20, color: Colors.black),
-                          content: Container(
-                            height: 150,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text("هل تريد ارسال موقعك ؟"),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                              ],
-                            ),
-                          ),
-                          actions: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  height: 30,
-                                  child: FlatButton(
-                                    child: Text('تحديد جهة اتصال'),
-                                    onPressed: () {
-                                      Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => notPage()));
-                                    },
-                                  ),
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xff6885e3),
-                                          Color(0xffffffff)
-                                        ],
-                                        begin: Alignment.bottomRight,
-                                        end: Alignment.topLeft,
-                                        stops: [0, 1]),
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                ),
-                                Container(
-                                  height: 30,
-                                  child: FlatButton(
-                                    child: Text('لا'),
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                  ),
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xff6885e3),
-                                          Color(0xffffffff)
-                                        ],
-                                        begin: Alignment.bottomRight,
-                                        end: Alignment.topLeft,
-                                        stops: [0, 1]),
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        );
-                      });
-                },
-                icon: const Icon(Icons.share_location_sharp),
-              ),
-            ],
+          child: TextField(
+            onChanged: (value) => print(value),
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                hintText: "ابحث",
+                hintStyle: TextStyle(fontFamily: "Cairo"),
+                prefixIcon: Icon(Icons.search)),
           ),
         ),
-        onWillPop: () {
-          SystemNavigator.pop();
-          return Future.value(false);
-        });
+      ),
+      floatingActionButton: ExpandableFab(
+        distance: 80.0,
+        children: [
+          ActionButton(
+            onPressed: () => _showAction(context, 0),
+            icon: const Icon(Icons.location_on_outlined),
+          ),
+          ActionButton(
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      elevation: 0.8,
+                      backgroundColor: Colors.white.withOpacity(0.9),
+                      actionsPadding: EdgeInsets.only(bottom: 20),
+                      contentTextStyle:
+                          TextStyle(fontSize: 20, color: Colors.black),
+                      content: Container(
+                        height: 150,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "هل تريد ارسال موقعك ؟",
+                              style: TextStyle(fontFamily: "Cairo"),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                        ),
+                      ),
+                      actions: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              height: 35,
+                              child: FlatButton(
+                                child: Text(
+                                  'تحديد جهة اتصال',
+                                  style: TextStyle(
+                                      fontFamily: "Cairo",
+                                      //  fontSize: 20,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                onPressed: () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => notPage()));
+                                },
+                              ),
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xff6885e3),
+                                      Color(0xffffffff)
+                                    ],
+                                    begin: Alignment.bottomRight,
+                                    end: Alignment.topLeft,
+                                    stops: [0, 1]),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                            ),
+                            Container(
+                              height: 35,
+                              child: FlatButton(
+                                child: Text(
+                                  'لا',
+                                  style: TextStyle(
+                                      fontFamily: "Cairo",
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xff6885e3),
+                                      Color(0xffffffff)
+                                    ],
+                                    begin: Alignment.bottomRight,
+                                    end: Alignment.topLeft,
+                                    stops: [0, 1]),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    );
+                  });
+            },
+            icon: const Icon(Icons.share_location_sharp),
+          ),
+        ],
+      ),
+    );
   }
 }
 

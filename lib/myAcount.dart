@@ -30,7 +30,7 @@ class _myacountState extends State<myacount> {
               elevation: 0,
               title: Text(
                 "حسابي",
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontFamily: "Cairo", fontSize: 25),
               ),
             ),
             backgroundColor: Colors.transparent,
@@ -65,7 +65,8 @@ class _myacountState extends State<myacount> {
                               child: Container(
                                 child: Text(
                                   "0992638853",
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(
+                                      fontFamily: "Cairo", fontSize: 20),
                                 ),
                                 padding: EdgeInsets.only(right: 10),
                               )),
@@ -110,6 +111,7 @@ class _myacountState extends State<myacount> {
                                             top: 0,
                                           ),
                                           contentTextStyle: TextStyle(
+                                              fontFamily: "Cairo",
                                               fontSize: 20,
                                               color: Colors.black),
                                           content: Container(
@@ -132,7 +134,11 @@ class _myacountState extends State<myacount> {
                                                 Container(
                                                   height: 30,
                                                   child: FlatButton(
-                                                    child: Text('نعم'),
+                                                    child: Text(
+                                                      'نعم',
+                                                      style: TextStyle(
+                                                          fontFamily: "Cairo"),
+                                                    ),
                                                     onPressed: () {
                                                       Navigator.pushReplacement(
                                                           context,
@@ -162,7 +168,11 @@ class _myacountState extends State<myacount> {
                                                 Container(
                                                   height: 30,
                                                   child: FlatButton(
-                                                    child: Text('لا'),
+                                                    child: Text(
+                                                      'لا',
+                                                      style: TextStyle(
+                                                          fontFamily: "Cairo"),
+                                                    ),
                                                     onPressed: () {
                                                       Navigator.pop(context);
                                                     },
@@ -190,9 +200,10 @@ class _myacountState extends State<myacount> {
                                       });
                                 },
                                 child: Text(
-                                  "jyddv vrl hgihjt",
+                                  "تغيير رقم الهاتف",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
+                                    fontFamily: "Cairo",
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xffffffff),
                                   ),
@@ -227,6 +238,7 @@ class _myacountState extends State<myacount> {
                             title: Text(
                               "حسابي",
                               style: TextStyle(
+                                fontFamily: "Cairo",
                                 fontSize: 25,
                               ),
                             ),

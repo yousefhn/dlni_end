@@ -36,6 +36,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                       child: Text(
                         'اتصل بنا',
                         style: TextStyle(
+                          fontFamily: "Cairo",
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -54,106 +55,17 @@ class _AboutUsPageState extends State<AboutUsPage> {
                               Text(
                                 "jxnhckjjznx",
                                 style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
+                                    fontFamily: "Cairo",
+                                    fontSize: 20,
+                                    color: Colors.white),
                               ),
                               Spacer(),
                               Text(
                                 "kjbshb",
                                 style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Icon(
-                                Icons.web_sharp,
-                                color: Color(0xff6885e3),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(20),
-                      child: Container(
-                        color: Colors.white.withOpacity(0.4),
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Row(
-                            children: [
-                              Text(
-                                "jxnhckjjznx",
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
-                              ),
-                              Spacer(),
-                              Text(
-                                "kjbshb",
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Icon(
-                                Icons.web_sharp,
-                                color: Color(0xff6885e3),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(20),
-                      child: Container(
-                        color: Colors.white.withOpacity(0.4),
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Row(
-                            children: [
-                              Text(
-                                "jxnhckjjznx",
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
-                              ),
-                              Spacer(),
-                              Text(
-                                "kjbshb",
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Icon(
-                                Icons.web_sharp,
-                                color: Color(0xff6885e3),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(20),
-                      child: Container(
-                        color: Colors.white.withOpacity(0.4),
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Row(
-                            children: [
-                              Text(
-                                "jxnhckjjznx",
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
-                              ),
-                              Spacer(),
-                              Text(
-                                "kjbshb",
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
+                                    fontFamily: "Cairo",
+                                    fontSize: 20,
+                                    color: Colors.white),
                               ),
                               SizedBox(
                                 width: 10,

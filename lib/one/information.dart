@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class first extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -53,21 +52,30 @@ class first extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(20),
                   child: ListTile(
-                    title: Text("تسجيل الخروج"),
+                    title: Text(
+                      "تسجيل الخروج",
+                      style: TextStyle(fontFamily: "Cairo"),
+                    ),
                     trailing: Icon(Icons.logout),
                   ),
                 ),
                 Container(
                   padding: EdgeInsets.all(20),
                   child: ListTile(
-                    title: Text("تسجيل الخروج"),
+                    title: Text(
+                      "تسجيل الخروج",
+                      style: TextStyle(fontFamily: "Cairo"),
+                    ),
                     trailing: Icon(Icons.logout),
                   ),
                 ),
                 Container(
                   padding: EdgeInsets.all(20),
                   child: ListTile(
-                    title: Text("تسجيل الخروج"),
+                    title: Text(
+                      "تسجيل الخروج",
+                      style: TextStyle(fontFamily: "Cairo"),
+                    ),
                     trailing: Icon(Icons.logout),
                   ),
                 )
@@ -89,9 +97,12 @@ Widget titel_section = Container(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Text('dvfvev')),
-
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                'dvfvev',
+                style: TextStyle(fontFamily: "Cairo"),
+              ),
+            ),
           ],
         ),
       ),
@@ -123,6 +134,7 @@ Widget _buildButtonColumn(IconData icon, String lable) {
         margin: const EdgeInsets.only(top: 8),
         child: Text(
           lable,
+          style: TextStyle(fontFamily: "Cairo"),
         ),
       )
     ],
@@ -136,7 +148,7 @@ class FavoriteWidget extends StatefulWidget {
 
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   bool _isFavorited = true;
-  int _favoriteCount = 41;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -154,12 +166,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
             onPressed: _toggleFavorite,
           ),
         ),
-        SizedBox(
-          width: 18,
-          child: Container(
-            child: Text('$_favoriteCount'),
-          ),
-        )
       ],
     );
   }
@@ -167,11 +173,8 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   void _toggleFavorite() {
     setState(() {
       if (_isFavorited) {
-
         _isFavorited = false;
-
       } else {
-
         _isFavorited = true;
       }
     });

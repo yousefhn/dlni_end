@@ -3,6 +3,7 @@ import 'package:example/favorite.dart';
 import 'package:example/location.dart';
 import 'package:example/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'hsaab.dart';
 
@@ -56,7 +57,10 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
               size: 30,
             ),
-            title: Text('اماكن'),
+            title: Text(
+              'اماكن',
+              style: TextStyle(fontFamily: "Cairo"),
+            ),
           ),
           BottomNavyBarItem(
             icon: Icon(
@@ -64,7 +68,10 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
               size: 30,
             ),
-            title: Text('اماكن'),
+            title: Text(
+              'اماكن',
+              style: TextStyle(fontFamily: "Cairo"),
+            ),
           ),
           BottomNavyBarItem(
             icon: Icon(
@@ -72,7 +79,10 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
               size: 30,
             ),
-            title: Text('اماكن'),
+            title: Text(
+              'اماكن',
+              style: TextStyle(fontFamily: "Cairo"),
+            ),
           ),
           BottomNavyBarItem(
             icon: Icon(
@@ -80,7 +90,10 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
               size: 30,
             ),
-            title: Text('اماكن'),
+            title: Text(
+              'اماكن',
+              style: TextStyle(fontFamily: "Cairo"),
+            ),
           ),
         ],
         //  buttonBackgroundColor: Color(0xff6885e3),
@@ -93,9 +106,20 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_si],
-      bottomNavigationBar: _bNB(),
-    );
+    return WillPopScope(
+        child: Scaffold(
+          body: _pages[_si],
+          bottomNavigationBar: _bNB(),
+        ),
+        onWillPop: () {
+          setState(() {
+            if (_si != 1) {
+              _si = 1;
+            } else {
+              SystemNavigator.pop();
+            }
+          });
+          return Future.value(false);
+        });
   }
 }

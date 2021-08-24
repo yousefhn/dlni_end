@@ -51,6 +51,7 @@ class NextState extends State<Next> {
                     'اهلاً وسهلاً,أدخل رمز \nالتفعيل الذي سيصلك برسالة نصيةالى الرقم\n ${phone}',
                     textAlign: TextAlign.center,
                     style: TextStyle(
+                      fontFamily: "Cairo",
                       fontWeight: FontWeight.bold,
                       fontSize: 40,
                       color: Color(0xffffffff),
@@ -115,6 +116,7 @@ class NextState extends State<Next> {
                               ),
                               filled: true,
                               labelStyle: TextStyle(
+                                fontFamily: "Cairo",
                                 height: 0.5,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 25,
@@ -149,6 +151,7 @@ class NextState extends State<Next> {
                               "إدخال",
                               textAlign: TextAlign.center,
                               style: TextStyle(
+                                fontFamily: "Cairo",
                                 fontWeight: FontWeight.bold,
                                 fontSize: 30,
                                 color: Color(0xffffffff),

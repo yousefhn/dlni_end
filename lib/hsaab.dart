@@ -28,7 +28,10 @@ class _HsState extends State<Hs> {
           child: Scaffold(
             appBar: AppBar(
               centerTitle: true,
-              title: Text('الحساب'),
+              title: Text(
+                'الحساب',
+                style: TextStyle(fontFamily: "Cairo"),
+              ),
               backgroundColor: Colors.transparent,
               elevation: 0,
             ),
@@ -74,6 +77,7 @@ class _HsState extends State<Hs> {
                             title: Text(
                               "حسابي",
                               style: TextStyle(
+                                fontFamily: "Cairo",
                                 fontSize: 25,
                               ),
                             ),
@@ -118,6 +122,7 @@ class _HsState extends State<Hs> {
                               title: Text(
                                 "اشعارات",
                                 style: TextStyle(
+                                  fontFamily: "Cairo",
                                   fontSize: 25,
                                 ),
                               ),
@@ -160,6 +165,7 @@ class _HsState extends State<Hs> {
                             title: Text(
                               "من نحن",
                               style: TextStyle(
+                                fontFamily: "Cairo",
                                 fontSize: 25,
                               ),
                             ),
@@ -217,7 +223,11 @@ class _HsState extends State<Hs> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            Text("تأكد من معلوماتك "),
+                                            Text(
+                                              "تأكد من معلوماتك ",
+                                              style: TextStyle(
+                                                  fontFamily: "Cairo"),
+                                            ),
                                           ],
                                         ),
                                       ),
@@ -229,7 +239,11 @@ class _HsState extends State<Hs> {
                                             Container(
                                               height: 30,
                                               child: FlatButton(
-                                                child: Text('نعم'),
+                                                child: Text(
+                                                  'نعم',
+                                                  style: TextStyle(
+                                                      fontFamily: "Cairo"),
+                                                ),
                                                 onPressed: () {
                                                   Navigator.pushReplacement(
                                                       context,
@@ -258,7 +272,11 @@ class _HsState extends State<Hs> {
                                             Container(
                                               height: 30,
                                               child: FlatButton(
-                                                child: Text('لا'),
+                                                child: Text(
+                                                  'لا',
+                                                  style: TextStyle(
+                                                      fontFamily: "Cairo"),
+                                                ),
                                                 onPressed: () {
                                                   Navigator.pop(context);
                                                 },
@@ -291,6 +309,7 @@ class _HsState extends State<Hs> {
                             title: Text(
                               "تسجيل الخروج",
                               style: TextStyle(
+                                fontFamily: "Cairo",
                                 fontSize: 25,
                               ),
                             ),

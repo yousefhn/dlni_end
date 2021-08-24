@@ -24,6 +24,7 @@ class Start extends StatelessWidget {
                       child: Text(
                         "أهلاً بك في تطبيق دِلّني",
                         style: TextStyle(
+                          fontFamily: "Cairo",
                           fontWeight: FontWeight.bold,
                           fontSize: 30,
                           color: Color(0xff202936),
@@ -69,6 +70,7 @@ class Start extends StatelessWidget {
                           "بدء",
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                            fontFamily: "Cairo",
                             fontWeight: FontWeight.bold,
                             fontSize: 30,
                             color: Color(0xffffffff),
