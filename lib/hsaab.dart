@@ -21,7 +21,7 @@ class _HsState extends State<Hs> {
             colors: [Color(0xff6885e3), Color(0xffffffff)],
             end: Alignment.bottomCenter,
             begin: Alignment.topCenter,
-            stops: [0.3, 1.2]),
+            stops: [0.0, 1.2]),
       ),
       child: Container(
         child: SafeArea(
@@ -30,7 +30,7 @@ class _HsState extends State<Hs> {
               centerTitle: true,
               title: Text(
                 'الحساب',
-                style: TextStyle(fontFamily: "Cairo"),
+                style: TextStyle(fontFamily: "Cairo", fontSize: 25),
               ),
               backgroundColor: Colors.transparent,
               elevation: 0,
@@ -43,15 +43,15 @@ class _HsState extends State<Hs> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
-                      height: 50,
-                    ),
-                    Container(
-                      width: 200,
-                      height: 200,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/3.png'),
-                              fit: BoxFit.fill)),
+                      height: 230,
+                      child: Container(
+                        width: 200,
+                        height: 200,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                          image: AssetImage('assets/images/3.png'),
+                        )),
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(20),
@@ -69,7 +69,12 @@ class _HsState extends State<Hs> {
                         child: Padding(
                           padding: EdgeInsets.all(0),
                           child: ListTile(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => myacount()));
+                            },
                             leading: Icon(
                               Icons.person_outline,
                               color: Color(0xff6885e3),
@@ -81,18 +86,10 @@ class _HsState extends State<Hs> {
                                 fontSize: 25,
                               ),
                             ),
-                            trailing: IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => myacount()));
-                              },
-                              icon: Icon(
-                                Icons.navigate_next_outlined,
-                                color: Color(0xff6885e3),
-                                size: 30,
-                              ),
+                            trailing: Icon(
+                              Icons.navigate_next_outlined,
+                              color: Color(0xff6885e3),
+                              size: 30,
                             ),
                           ),
                         ),
@@ -114,32 +111,30 @@ class _HsState extends State<Hs> {
                         child: Padding(
                           padding: EdgeInsets.all(0),
                           child: ListTile(
-                              onTap: () {},
-                              leading: Icon(
-                                Icons.notification_important_outlined,
-                                color: Color(0xff6885e3),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          notificationPage()));
+                            },
+                            leading: Icon(
+                              Icons.notification_important_outlined,
+                              color: Color(0xff6885e3),
+                            ),
+                            title: Text(
+                              "اشعارات",
+                              style: TextStyle(
+                                fontFamily: "Cairo",
+                                fontSize: 25,
                               ),
-                              title: Text(
-                                "اشعارات",
-                                style: TextStyle(
-                                  fontFamily: "Cairo",
-                                  fontSize: 25,
-                                ),
-                              ),
-                              trailing: IconButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              notificationPage()));
-                                },
-                                icon: Icon(
-                                  Icons.navigate_next_outlined,
-                                  color: Color(0xff6885e3),
-                                  size: 30,
-                                ),
-                              )),
+                            ),
+                            trailing: Icon(
+                              Icons.navigate_next_outlined,
+                              color: Color(0xff6885e3),
+                              size: 30,
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -157,31 +152,29 @@ class _HsState extends State<Hs> {
                         ),
                         margin: EdgeInsets.all(0),
                         child: ListTile(
-                            onTap: () {},
-                            leading: Icon(
-                              Icons.info_outline,
-                              color: Color(0xff6885e3),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AboutUsPage()));
+                          },
+                          leading: Icon(
+                            Icons.info_outline,
+                            color: Color(0xff6885e3),
+                          ),
+                          title: Text(
+                            "من نحن",
+                            style: TextStyle(
+                              fontFamily: "Cairo",
+                              fontSize: 25,
                             ),
-                            title: Text(
-                              "من نحن",
-                              style: TextStyle(
-                                fontFamily: "Cairo",
-                                fontSize: 25,
-                              ),
-                            ),
-                            trailing: IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => AboutUsPage()));
-                              },
-                              icon: Icon(
-                                Icons.navigate_next_outlined,
-                                color: Color(0xff6885e3),
-                                size: 30,
-                              ),
-                            )),
+                          ),
+                          trailing: Icon(
+                            Icons.navigate_next_outlined,
+                            color: Color(0xff6885e3),
+                            size: 30,
+                          ),
+                        ),
                       ),
                     ),
                     Padding(

@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:example/splashScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -57,28 +58,49 @@ class _SearchBarDemoHomeState extends State<SearchBarDemoHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
-      extendBodyBehindAppBar: true,
       body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.all(10),
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(0.4),
-            borderRadius: BorderRadius.circular(25),
+          child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: IconButton(
+                  padding: EdgeInsets.only(right: 20),
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    color: Color(0xff6885e3),
+                    size: 30,
+                  ),
+                  onPressed: () {
+                    SystemNavigator.pop();
+                  },
+                ),
+              ),
+              Expanded(
+                flex: 10,
+                child: Container(
+                  margin: EdgeInsets.only(left: 10, top: 10, bottom: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: TextField(
+                    onChanged: (value) => print(value),
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        hintText: "ابحث",
+                        hintStyle: TextStyle(fontFamily: "Cairo"),
+                        prefixIcon: Icon(Icons.search)),
+                  ),
+                ),
+              ),
+            ],
           ),
-          child: TextField(
-            onChanged: (value) => print(value),
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                hintText: "ابحث",
-                hintStyle: TextStyle(fontFamily: "Cairo"),
-                prefixIcon: Icon(Icons.search)),
-          ),
-        ),
-      ),
+        ],
+      )),
       floatingActionButton: ExpandableFab(
         distance: 80.0,
         children: [
@@ -98,7 +120,7 @@ class _SearchBarDemoHomeState extends State<SearchBarDemoHome> {
                       contentTextStyle:
                           TextStyle(fontSize: 20, color: Colors.black),
                       content: Container(
-                        height: 150,
+                        height: 100,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -106,9 +128,6 @@ class _SearchBarDemoHomeState extends State<SearchBarDemoHome> {
                             Text(
                               "هل تريد ارسال موقعك ؟",
                               style: TextStyle(fontFamily: "Cairo"),
-                            ),
-                            SizedBox(
-                              height: 20,
                             ),
                           ],
                         ),

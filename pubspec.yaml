@@ -28,6 +28,8 @@ dependencies:
   curved_navigation_bar:
   introduction_screen: 
   intro_views_flutter: ^3.2.0
+  sms_autofill: 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

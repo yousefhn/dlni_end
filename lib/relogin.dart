@@ -1,19 +1,18 @@
+import 'package:example/renext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-import 'next.dart';
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+class reMyHomePage extends StatefulWidget {
+  reMyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<reMyHomePage> {
   TextEditingController _phone = TextEditingController();
   GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   @override
@@ -55,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             height: 100,
                           ),
                           Text(
-                            'تسجيل الدخول',
+                            "الرقم الجديد",
                             style: TextStyle(
                               fontFamily: "Cairo",
                               fontWeight: FontWeight.bold,
@@ -230,7 +229,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                                     MaterialPageRoute(
                                                                         builder:
                                                                             (context) =>
-                                                                                Next(ph: _phone.text)));
+                                                                                reNext(ph: _phone.text)));
                                                               },
                                                             ),
                                                             width: 100,

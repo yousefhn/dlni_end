@@ -20,7 +20,7 @@ class first extends StatelessWidget {
                 Color(0xff6885e3).withOpacity(0.7),
                 Color(0xffffffff).withOpacity(0.7)
               ],
-              stops: [0.4, 0.9],
+              stops: [0.4, 1.2],
               end: Alignment.bottomCenter,
               begin: Alignment.topCenter,
             ),
@@ -28,24 +28,11 @@ class first extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        'assets/images/19.jpg',
-                        width: MediaQuery.of(context).size.width,
-                        height: 250,
-                        fit: BoxFit.cover,
-                      ),
-                      Image.asset(
-                        'assets/images/19.jpg',
-                        width: MediaQuery.of(context).size.width,
-                        height: 250,
-                        fit: BoxFit.cover,
-                      ),
-                    ],
-                  ),
+                Image.asset(
+                  'assets/images/19.jpg',
+                  width: MediaQuery.of(context).size.width,
+                  height: 250,
+                  fit: BoxFit.cover,
                 ),
                 titel_section,
                 button_section,
@@ -54,7 +41,8 @@ class first extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                       "تسجيل الخروج",
-                      style: TextStyle(fontFamily: "Cairo"),
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
                     ),
                     trailing: Icon(Icons.logout),
                   ),

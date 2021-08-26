@@ -5,8 +5,8 @@ import 'package:sms_autofill/sms_autofill.dart';
 
 import '../home.dart';
 
-class Next extends StatefulWidget {
-  Next({Key? key, required this.ph})
+class reNext extends StatefulWidget {
+  reNext({Key? key, required this.ph})
       : super(
           key: key,
         );
@@ -16,7 +16,7 @@ class Next extends StatefulWidget {
   NextState createState() => NextState(phone: '$ph');
 }
 
-class NextState extends State<Next> {
+class NextState extends State<reNext> {
   String phone;
   NextState({
     required this.phone,

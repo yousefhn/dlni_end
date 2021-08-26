@@ -1,8 +1,7 @@
 import 'dart:ui';
 
+import 'package:example/relogin.dart';
 import 'package:flutter/material.dart';
-
-import 'one/login.dart';
 
 class myacount extends StatefulWidget {
   const myacount({Key? key}) : super(key: key);
@@ -20,12 +19,13 @@ class _myacountState extends State<myacount> {
             colors: [Color(0xff6885e3), Color(0xffffffff)],
             end: Alignment.bottomCenter,
             begin: Alignment.topCenter,
-            stops: [0.3, 1.2]),
+            stops: [0.0, 1.2]),
       ),
       child: Container(
         child: SafeArea(
           child: Scaffold(
             appBar: AppBar(
+              centerTitle: true,
               backgroundColor: Colors.transparent,
               elevation: 0,
               title: Text(
@@ -144,7 +144,7 @@ class _myacountState extends State<myacount> {
                                                           context,
                                                           MaterialPageRoute(
                                                               builder: (context) =>
-                                                                  MyHomePage(
+                                                                  reMyHomePage(
                                                                       title:
                                                                           "")));
                                                     },
@@ -231,12 +231,8 @@ class _myacountState extends State<myacount> {
                           padding: EdgeInsets.all(0),
                           child: ListTile(
                             onTap: () {},
-                            leading: Icon(
-                              Icons.person_outline,
-                              color: Color(0xff6885e3),
-                            ),
                             title: Text(
-                              "حسابي",
+                              "تفعيل الاشعارات",
                               style: TextStyle(
                                 fontFamily: "Cairo",
                                 fontSize: 25,

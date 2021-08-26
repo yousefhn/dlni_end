@@ -23,19 +23,19 @@ class _LocationPageState extends State<LocationPage> {
         child: SafeArea(
           child: Scaffold(
               backgroundColor: Colors.transparent,
-              extendBodyBehindAppBar: true,
+
               body: NestedScrollView(
                 floatHeaderSlivers: true,
                 headerSliverBuilder: (context, innerBoxIsScrolled) => [
                   SliverAppBar(
-                    automaticallyImplyLeading: false,
+
                     centerTitle: true,
                     title: Text(
                       "الأماكن ",
                       style: TextStyle(
                           fontFamily: "Cairo",
                           color: Colors.white,
-                          fontSize: 40),
+                          fontSize: 25),
                     ),
                     elevation: 0,
                     backgroundColor: Colors.transparent,
@@ -58,7 +58,10 @@ class _LocationPageState extends State<LocationPage> {
                         ),
                         margin: EdgeInsets.all(0),
                         child: ListTile(
-                            onTap: () {},
+                            onTap: () {Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => first()));},
                             title: Text(
                               "من نحن",
                               style: TextStyle(
@@ -66,19 +69,12 @@ class _LocationPageState extends State<LocationPage> {
                                 fontSize: 25,
                               ),
                             ),
-                            trailing: IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => first()));
-                              },
-                              icon: Icon(
+                            trailing: Icon(
                                 Icons.navigate_next_outlined,
                                 color: Color(0xff6885e3),
                                 size: 30,
                               ),
-                            )),
+                            ),
                       ),
                     );
                   },

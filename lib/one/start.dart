@@ -61,7 +61,7 @@ class Start extends StatelessWidget {
                         color: Colors.transparent,
                         elevation: 0,
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => pageView()));

@@ -18,6 +18,22 @@ class _AboutUsPageState extends State<AboutUsPage> {
       child: Container(
         child: SafeArea(
           child: Scaffold(
+            appBar: AppBar(
+              leading: IconButton(
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Color(0xff6885e3),
+                  size: 30,
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            ),
+            extendBody: true,
+            extendBodyBehindAppBar: true,
             backgroundColor: Colors.transparent,
             body: ListView(
               children: [
@@ -47,34 +63,119 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     Padding(
                       padding: EdgeInsets.all(20),
                       child: Container(
-                        color: Colors.white.withOpacity(0.4),
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Row(
-                            children: [
-                              Text(
-                                "jxnhckjjznx",
-                                style: TextStyle(
-                                    fontFamily: "Cairo",
-                                    fontSize: 20,
-                                    color: Colors.white),
-                              ),
-                              Spacer(),
-                              Text(
-                                "kjbshb",
-                                style: TextStyle(
-                                    fontFamily: "Cairo",
-                                    fontSize: 20,
-                                    color: Colors.white),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Icon(
-                                Icons.web_sharp,
-                                color: Color(0xff6885e3),
-                              )
-                            ],
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Color(0xff6885e3), Color(0xffffffff)],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              stops: [0, 0.5]),
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white.withOpacity(0.4),
+                        ),
+                        margin: EdgeInsets.all(0),
+                        child: ListTile(
+                          onTap: () {},
+                          title: Text(
+                            "من نحن",
+                            style: TextStyle(
+                              fontFamily: "Cairo",
+                              fontSize: 25,
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.navigate_next_outlined,
+                            color: Color(0xff6885e3),
+                            size: 30,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Color(0xff6885e3), Color(0xffffffff)],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              stops: [0, 0.5]),
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white.withOpacity(0.4),
+                        ),
+                        margin: EdgeInsets.all(0),
+                        child: ListTile(
+                          onTap: () {},
+                          title: Text(
+                            "من نحن",
+                            style: TextStyle(
+                              fontFamily: "Cairo",
+                              fontSize: 25,
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.navigate_next_outlined,
+                            color: Color(0xff6885e3),
+                            size: 30,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Color(0xff6885e3), Color(0xffffffff)],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              stops: [0, 0.5]),
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white.withOpacity(0.4),
+                        ),
+                        margin: EdgeInsets.all(0),
+                        child: ListTile(
+                          onTap: () {},
+                          title: Text(
+                            "من نحن",
+                            style: TextStyle(
+                              fontFamily: "Cairo",
+                              fontSize: 25,
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.navigate_next_outlined,
+                            color: Color(0xff6885e3),
+                            size: 30,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Color(0xff6885e3), Color(0xffffffff)],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              stops: [0, 0.5]),
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white.withOpacity(0.4),
+                        ),
+                        margin: EdgeInsets.all(0),
+                        child: ListTile(
+                          onTap: () {},
+                          title: Text(
+                            "من نحن",
+                            style: TextStyle(
+                              fontFamily: "Cairo",
+                              fontSize: 25,
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.navigate_next_outlined,
+                            color: Color(0xff6885e3),
+                            size: 30,
                           ),
                         ),
                       ),

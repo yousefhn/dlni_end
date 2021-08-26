@@ -20,7 +20,7 @@ class _notificationPageState extends State<notPage> {
               colors: [Color(0xff6885e3), Color(0xffffffff)],
               end: Alignment.bottomCenter,
               begin: Alignment.topCenter,
-              stops: [0.3, 1.2]),
+              stops: [0.0, 1.2]),
         ),
         child: SafeArea(
           child: Scaffold(
@@ -30,14 +30,21 @@ class _notificationPageState extends State<notPage> {
                 floatHeaderSlivers: true,
                 headerSliverBuilder: (context, innerBoxIsScrolled) => [
                   SliverAppBar(
-                    automaticallyImplyLeading: false,
+                    leading: IconButton(
+                      icon: Icon(Icons.navigate_next_outlined),
+                      iconSize: 30,
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    // automaticallyImplyLeading: true,
                     centerTitle: true,
                     title: Text(
-                      "الأماكن ",
+                      "جهات الاتصال ",
                       style: TextStyle(
                           fontFamily: "Cairo",
                           color: Colors.white,
-                          fontSize: 40),
+                          fontSize: 25),
                     ),
                     elevation: 0,
                     backgroundColor: Colors.transparent,
