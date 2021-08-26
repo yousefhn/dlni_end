@@ -67,11 +67,8 @@ class _SearchBarDemoHomeState extends State<SearchBarDemoHome> {
                 flex: 1,
                 child: IconButton(
                   padding: EdgeInsets.only(right: 20),
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Color(0xff6885e3),
-                    size: 30,
-                  ),
+                  icon: Icon(Icons.arrow_back_ios,
+                      color: Color(0xff6885e3), size: 30),
                   onPressed: () {
                     SystemNavigator.pop();
                   },
