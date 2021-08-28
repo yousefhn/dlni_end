@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
               size: 30,
             ),
             title: Text(
-              'اماكن',
+              'استكشاف',
               style: TextStyle(fontFamily: "Cairo"),
             ),
           ),
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
               size: 30,
             ),
             title: Text(
-              'اماكن',
+              'المفضلة',
               style: TextStyle(fontFamily: "Cairo"),
             ),
           ),
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
               size: 30,
             ),
             title: Text(
-              'اماكن',
+              'الحساب',
               style: TextStyle(fontFamily: "Cairo"),
             ),
           ),

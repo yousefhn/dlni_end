@@ -50,11 +50,8 @@ class Start extends StatelessWidget {
                     Container(
                       width: 250,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: [Color(0xff6885e3), Color(0xffffffff)],
-                            begin: Alignment.bottomRight,
-                            end: Alignment.topLeft,
-                            stops: [0.4, 2]),
+                        color: Color(0xff6885e3),
+                        // border: Border.all(color: Colors.white, width: 3),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: RaisedButton(
@@ -72,8 +69,8 @@ class Start extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: "Cairo",
                             fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                            color: Color(0xffffffff),
+                            fontSize: 25,
+                            color: Colors.white,
                           ),
                         ),
                       ),

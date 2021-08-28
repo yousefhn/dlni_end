@@ -206,6 +206,7 @@ class pageView extends StatelessWidget {
           ),
         ),
       ],
+
       dotsDecorator: DotsDecorator(
         spacing: EdgeInsets.all(5),
         activeColor: Color(0xff6885e3),
@@ -247,26 +248,15 @@ class pageView extends StatelessWidget {
         height: 60,
         width: 60,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color(0xff6885e3), Color(0xffffffff)],
-              end: Alignment.bottomCenter,
-              begin: Alignment.topCenter,
-              stops: [0, 0.9]),
           borderRadius: BorderRadius.circular(40),
-          boxShadow: [
-            BoxShadow(
-              color: Color(0xff6885e3).withOpacity(0.5),
-              blurRadius: 10,
-              offset: Offset(0, 8),
-            ),
-          ],
+          border: Border.all(color: Color(0xff6885e3), width: 2),
         ),
         child: Center(
           child: Text(
             "تخطي",
             style: TextStyle(
                 fontFamily: "Cairo",
-                color: Colors.white,
+                color: Color(0xff6885e3),
                 fontWeight: FontWeight.bold),
           ),
         ),
@@ -289,25 +279,14 @@ class pageView extends StatelessWidget {
         height: 60,
         width: 60,
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Color(0xff6885e3), Color(0xffffffff)],
-                end: Alignment.bottomCenter,
-                begin: Alignment.topCenter,
-                stops: [0, 0.9]),
             borderRadius: BorderRadius.circular(40),
-            boxShadow: [
-              BoxShadow(
-                color: Color(0xff6885e3).withOpacity(0.5),
-                blurRadius: 10,
-                offset: Offset(0, 8),
-              ),
-            ]),
+            border: Border.all(color: Color(0xff6885e3), width: 2)),
         child: Center(
           child: Text(
-            "انتهى",
+            "دخول",
             style: TextStyle(
                 fontFamily: "Cairo",
-                color: Colors.white,
+                color: Color(0xff6885e3),
                 fontWeight: FontWeight.bold),
           ),
         ),

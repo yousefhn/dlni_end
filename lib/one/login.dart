@@ -147,17 +147,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     height: 90,
                                   ),
                                   Container(
-                                    width: double.infinity,
+                                    width: 250,
                                     decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                          colors: [
-                                            Color(0xff6885e3),
-                                            Color(0xffffffff)
-                                          ],
-                                          begin: Alignment.bottomRight,
-                                          end: Alignment.topLeft,
-                                          stops: [0.4, 2]),
-                                      borderRadius: BorderRadius.circular(16),
+                                      color: Color(0xff6885e3),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: RaisedButton(
                                       color: Colors.transparent,
@@ -221,6 +214,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                               child: Text(
                                                                 'نعم',
                                                                 style: TextStyle(
+                                                                    color: Colors
+                                                                        .white,
                                                                     fontFamily:
                                                                         "Cairo"),
                                                               ),
@@ -236,25 +231,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                                             width: 100,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              gradient: LinearGradient(
-                                                                  colors: [
-                                                                    Color(
-                                                                        0xff6885e3),
-                                                                    Color(
-                                                                        0xffffffff)
-                                                                  ],
-                                                                  begin: Alignment
-                                                                      .bottomRight,
-                                                                  end: Alignment
-                                                                      .topLeft,
-                                                                  stops: [
-                                                                    0,
-                                                                    1
-                                                                  ]),
+                                                              color: Color(
+                                                                  0xff6885e3),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          16),
+                                                                          10),
                                                             ),
                                                           ),
                                                           Container(
@@ -263,6 +245,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                               child: Text(
                                                                 'لا',
                                                                 style: TextStyle(
+                                                                    color: Colors
+                                                                        .white,
                                                                     fontFamily:
                                                                         "Cairo"),
                                                               ),
@@ -274,25 +258,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                                             width: 100,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              gradient: LinearGradient(
-                                                                  colors: [
-                                                                    Color(
-                                                                        0xff6885e3),
-                                                                    Color(
-                                                                        0xffffffff)
-                                                                  ],
-                                                                  begin: Alignment
-                                                                      .bottomRight,
-                                                                  end: Alignment
-                                                                      .topLeft,
-                                                                  stops: [
-                                                                    0,
-                                                                    1
-                                                                  ]),
+                                                              color: Color(
+                                                                  0xff6885e3),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          16),
+                                                                          10),
                                                             ),
                                                           ),
                                                         ],
@@ -309,7 +280,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         style: TextStyle(
                                           fontFamily: "Cairo",
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 30,
+                                          fontSize: 25,
                                           color: Color(0xffffffff),
                                         ),
                                       ),

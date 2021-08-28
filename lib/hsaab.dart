@@ -1,5 +1,6 @@
 import 'package:example/myAcount.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import 'aboutus.dart';
 import 'notification.dart';
@@ -12,7 +13,22 @@ class Hs extends StatefulWidget {
   _HsState createState() => _HsState();
 }
 
-class _HsState extends State<Hs> {
+class _HsState extends State<Hs> with TickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,14 +60,25 @@ class _HsState extends State<Hs> {
                   children: [
                     SizedBox(
                       height: 230,
-                      child: Container(
-                        width: 200,
-                        height: 200,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                          image: AssetImage('assets/images/3.png'),
-                        )),
+                      child: Lottie.asset(
+                        'assets/LottieLogo1.json',
+                        controller: _controller,
+                        onLoaded: (composition) {
+                          // Configure the AnimationController with the duration of the
+                          // Lottie file and start the animation.
+                          _controller
+                            ..duration = composition.duration
+                            ..forward();
+                        },
                       ),
+                      // Container(
+                      //   width: 200,
+                      //   height: 200,
+                      //   decoration: BoxDecoration(
+                      //       image: DecorationImage(
+                      //     image: AssetImage('assets/images/3.png'),
+                      //   )),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(20),

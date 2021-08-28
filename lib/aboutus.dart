@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AboutUsPage extends StatefulWidget {
@@ -64,120 +65,112 @@ class _AboutUsPageState extends State<AboutUsPage> {
                       padding: EdgeInsets.all(20),
                       child: Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [Color(0xff6885e3), Color(0xffffffff)],
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                              stops: [0, 0.5]),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                           color: Colors.white.withOpacity(0.4),
                         ),
                         margin: EdgeInsets.all(0),
                         child: ListTile(
-                          onTap: () {},
-                          title: Text(
-                            "من نحن",
-                            style: TextStyle(
-                              fontFamily: "Cairo",
-                              fontSize: 25,
+                            minLeadingWidth: 10,
+                            leading: Icon(
+                              Icons.dashboard,
+                              color: Color(0xff6885e3),
                             ),
-                          ),
-                          trailing: Icon(
-                            Icons.navigate_next_outlined,
-                            color: Color(0xff6885e3),
-                            size: 30,
-                          ),
-                        ),
+                            onTap: () {},
+                            title: Text(
+                              " الموقع",
+                              style: TextStyle(
+                                  fontFamily: "Cairo",
+                                  fontSize: 20,
+                                  color: Colors.white),
+                            ),
+                            trailing: Text(
+                              'www.Dlni.com',
+                              style: TextStyle(color: Colors.white),
+                            )),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(20),
                       child: Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [Color(0xff6885e3), Color(0xffffffff)],
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                              stops: [0, 0.5]),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                           color: Colors.white.withOpacity(0.4),
                         ),
                         margin: EdgeInsets.all(0),
                         child: ListTile(
-                          onTap: () {},
-                          title: Text(
-                            "من نحن",
-                            style: TextStyle(
-                              fontFamily: "Cairo",
-                              fontSize: 25,
+                            minLeadingWidth: 10,
+                            leading: Icon(
+                              Icons.call,
+                              color: Color(0xff6885e3),
                             ),
-                          ),
-                          trailing: Icon(
-                            Icons.navigate_next_outlined,
-                            color: Color(0xff6885e3),
-                            size: 30,
-                          ),
-                        ),
+                            onTap: () {},
+                            title: Text(
+                              " الهاتف",
+                              style: TextStyle(
+                                  fontFamily: "Cairo",
+                                  fontSize: 20,
+                                  color: Colors.white),
+                            ),
+                            trailing: Text(
+                              '0945217248',
+                              style: TextStyle(color: Colors.white),
+                            )),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(20),
                       child: Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [Color(0xff6885e3), Color(0xffffffff)],
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                              stops: [0, 0.5]),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                           color: Colors.white.withOpacity(0.4),
                         ),
                         margin: EdgeInsets.all(0),
                         child: ListTile(
-                          onTap: () {},
-                          title: Text(
-                            "من نحن",
-                            style: TextStyle(
-                              fontFamily: "Cairo",
-                              fontSize: 25,
+                            minLeadingWidth: 10,
+                            leading: Icon(
+                              Icons.location_on_outlined,
+                              color: Color(0xff6885e3),
                             ),
-                          ),
-                          trailing: Icon(
-                            Icons.navigate_next_outlined,
-                            color: Color(0xff6885e3),
-                            size: 30,
-                          ),
-                        ),
+                            onTap: () {},
+                            title: Text(
+                              " العنوان",
+                              style: TextStyle(
+                                  fontFamily: "Cairo",
+                                  fontSize: 20,
+                                  color: Colors.white),
+                            ),
+                            trailing: Text(
+                              'Almazeh',
+                              style: TextStyle(color: Colors.white),
+                            )),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(20),
                       child: Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [Color(0xff6885e3), Color(0xffffffff)],
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                              stops: [0, 0.5]),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                           color: Colors.white.withOpacity(0.4),
                         ),
                         margin: EdgeInsets.all(0),
                         child: ListTile(
-                          onTap: () {},
-                          title: Text(
-                            "من نحن",
-                            style: TextStyle(
-                              fontFamily: "Cairo",
-                              fontSize: 25,
+                            minLeadingWidth: 10,
+                            leading: Icon(
+                              Icons.create,
+                              color: Color(0xff6885e3),
                             ),
-                          ),
-                          trailing: Icon(
-                            Icons.navigate_next_outlined,
-                            color: Color(0xff6885e3),
-                            size: 30,
-                          ),
-                        ),
+                            onTap: () {},
+                            title: Text(
+                              "طور من قبل",
+                              style: TextStyle(
+                                  fontFamily: "Cairo",
+                                  fontSize: 20,
+                                  color: Colors.white),
+                            ),
+                            trailing: Text(
+                              'MYM',
+                              style: TextStyle(color: Colors.white),
+                            )),
                       ),
                     ),
                   ],
