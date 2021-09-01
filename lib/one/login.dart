@@ -1,3 +1,5 @@
+import 'package:email_validator/email_validator.dart';
+import 'package:example/register.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,7 +16,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController _phone = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _pass = TextEditingController();
+  bool ishidden = true;
+  @override
+  void dispose() {
+    _email.dispose();
+    _pass.dispose();
+    super.dispose();
+  }
+
   GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -32,74 +43,84 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Scaffold(
                 backgroundColor: Colors.transparent,
                 body: NestedScrollView(
-                    floatHeaderSlivers: true,
-                    headerSliverBuilder: (context, innerBoxIsScrolled) => [
-                          SliverAppBar(
-                            backgroundColor: Colors.transparent,
-                            elevation: 0,
-                            leading: IconButton(
-                              icon: Icon(Icons.arrow_back_ios),
-                              iconSize: 30,
-                              onPressed: () {
-                                SystemNavigator.pop();
-                              },
-                            ),
+                  floatHeaderSlivers: true,
+                  headerSliverBuilder: (context, innerBoxIsScrolled) => [
+                    SliverAppBar(
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      leading: IconButton(
+                        icon: Icon(Icons.arrow_back_ios),
+                        iconSize: 30,
+                        onPressed: () {
+                          SystemNavigator.pop();
+                        },
+                      ),
+                    ),
+                  ],
+                  body: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'تسجيل الدخول',
+                          style: TextStyle(
+                            fontFamily: "Cairo",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40,
+                            color: Color(0xff202936),
                           ),
-                        ],
-                    body: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SizedBox(
-                            height: 100,
-                          ),
-                          Text(
-                            'تسجيل الدخول',
-                            style: TextStyle(
-                              fontFamily: "Cairo",
-                              fontWeight: FontWeight.bold,
-                              fontSize: 40,
-                              color: Color(0xff202936),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 100,
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(20),
-                            child: Form(
-                              key: _formkey,
+                        ),
+                        SizedBox(
+                          height: 80,
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(20),
+                          child: Form(
+                            key: _formkey,
+                            child: AutofillGroup(
                               child: Column(
                                 children: [
                                   //child:
 
                                   TextFormField(
-                                    validator: (_phone) {
-                                      if (_phone.toString().length < 10) {
-                                        return 'أدخل عشر ارقام ';
-                                      } else {
-                                        return null;
-                                      }
-                                    },
-                                    controller: _phone,
+                                    validator: (_email) => _email != null &&
+                                            !EmailValidator.validate(_email)
+                                        ? 'أدخل بريد صحيح '
+                                        : null,
+                                    // {
+                                    //   if (_email.toString().length < 10) {
+                                    //     return 'أدخل بريد صحيح ';
+                                    //   } else {
+                                    //     return null;
+                                    //   }
+                                    // },
+
+                                    controller: _email,
                                     style: TextStyle(
                                         fontSize: 16.0,
                                         color: Color(0xff6885e3)),
-                                    keyboardType: TextInputType.phone,
+                                    keyboardType: TextInputType.emailAddress,
+                                    autofillHints: [AutofillHints.email],
                                     textAlign: TextAlign.right,
-                                    maxLength: 10,
+
                                     decoration: InputDecoration(
                                       fillColor:
                                           Color(0xffffffff).withOpacity(0.5),
                                       // enabled: true,
+                                      suffixIcon: IconButton(
+                                          onPressed: () {
+                                            setState(() {
+                                              _email.clear();
+                                            });
+                                          },
+                                          icon: Icon(Icons.clear)),
                                       prefixIcon: Icon(
-                                        Icons.phone,
+                                        Icons.mail_outline,
                                         size: 30,
                                         color: Color(0xff6885e3),
                                       ),
 
-                                      labelText: "رقم الهاتف ",
+                                      labelText: "البريد الالكتروني ",
                                       //  errorText: _emp,
                                       errorBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(16),
@@ -141,10 +162,89 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                     ),
                                   ),
-
-                                  //  ),
                                   SizedBox(
-                                    height: 90,
+                                    height: 15,
+                                  ),
+                                  TextFormField(
+                                    validator: (_pass) =>
+                                        _pass != null && _pass.length < 5
+                                            ? 'أدخل خمسة احرف على الاقل '
+                                            : null,
+                                    controller: _pass,
+                                    style: TextStyle(
+                                        fontSize: 16.0,
+                                        color: Color(0xff6885e3)),
+                                    //keyboardType: TextInputType.,
+                                    autofillHints: [AutofillHints.password],
+                                    onEditingComplete: () =>
+                                        TextInput.finishAutofillContext(),
+                                    textAlign: TextAlign.right,
+                                    obscureText: ishidden,
+                                    decoration: InputDecoration(
+                                      fillColor:
+                                          Color(0xffffffff).withOpacity(0.5),
+                                      // enabled: true,
+                                      suffixIcon: IconButton(
+                                          onPressed: () {
+                                            setState(() {
+                                              ishidden = !ishidden;
+                                            });
+                                          },
+                                          icon: ishidden
+                                              ? Icon(
+                                                  Icons.visibility_off_outlined)
+                                              : Icon(
+                                                  Icons.visibility_outlined)),
+                                      prefixIcon: Icon(
+                                        Icons.lock_outline,
+                                        size: 30,
+                                        color: Color(0xff6885e3),
+                                      ),
+
+                                      labelText: "كلمة المرور ",
+                                      //  errorText: _emp,
+                                      errorBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(16),
+                                        borderSide: BorderSide(
+                                          width: 2,
+                                          color: Colors.red,
+                                        ),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(16),
+                                        borderSide: BorderSide(
+                                          width: 2,
+                                          color: Colors.red,
+                                        ),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(16),
+                                        borderSide: BorderSide(
+                                          width: 2,
+                                          color: Color(0xff6885e3),
+                                        ),
+                                      ),
+
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(16),
+                                        borderSide: BorderSide(
+                                          width: 2,
+                                          color: Color(0xff6885e3),
+                                        ),
+                                      ),
+                                      filled: true,
+                                      labelStyle: TextStyle(
+                                        fontFamily: "Cairo",
+                                        height: 0.6,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        color:
+                                            Color(0xff202936).withOpacity(0.9),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 80,
                                   ),
                                   Container(
                                     width: 250,
@@ -198,7 +298,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                             height: 20,
                                                           ),
                                                           Text(
-                                                              "${_phone.text}"),
+                                                              "${_email.text}"),
                                                         ],
                                                       ),
                                                     ),
@@ -225,7 +325,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                                     MaterialPageRoute(
                                                                         builder:
                                                                             (context) =>
-                                                                                Next(ph: _phone.text)));
+                                                                                Next(ph: _email.text)));
                                                               },
                                                             ),
                                                             width: 100,
@@ -290,12 +390,31 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 100,
-                          ),
-                        ],
-                      ),
-                    )),
+                        ),
+                        SizedBox(
+                          height: 100,
+                          child: Center(
+                              child: Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('bjhvhjjjcjjjjjn'),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  register(title: '')));
+                                    },
+                                    child: Text('fhfjvjh'))
+                              ],
+                            ),
+                          )),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

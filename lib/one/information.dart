@@ -40,31 +40,44 @@ class first extends StatelessWidget {
                   padding: EdgeInsets.all(20),
                   child: ListTile(
                     title: Text(
-                      "تسجيل الخروج",
+                      "موقع",
                       style: TextStyle(
-                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                        fontFamily: "Cairo",
+                      ),
                     ),
-                    trailing: Icon(Icons.logout),
+                    leading: Icon(Icons.location_on_outlined),
                   ),
                 ),
                 Container(
                   padding: EdgeInsets.all(20),
                   child: ListTile(
                     title: Text(
-                      "تسجيل الخروج",
+                      "مفتوح من كذا لكذا",
                       style: TextStyle(fontFamily: "Cairo"),
                     ),
-                    trailing: Icon(Icons.logout),
+                    leading: Icon(Icons.watch_later_outlined),
                   ),
                 ),
                 Container(
                   padding: EdgeInsets.all(20),
                   child: ListTile(
                     title: Text(
-                      "تسجيل الخروج",
+                      "تواصل رقمي",
                       style: TextStyle(fontFamily: "Cairo"),
                     ),
-                    trailing: Icon(Icons.logout),
+                    leading: Icon(Icons.call),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      button_media(Icons.ac_unit, () {}),
+                      button_media(Icons.ac_unit, () {}),
+                      button_media(Icons.ac_unit, () {}),
+                      button_media(Icons.ac_unit, () {}),
+                    ],
                   ),
                 )
               ],
@@ -81,43 +94,44 @@ Widget titel_section = Container(
   child: Row(
     children: [
       Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Text(
-                'dvfvev',
-                style: TextStyle(fontFamily: "Cairo"),
-              ),
-            ),
-          ],
+        child: Container(
+          child: Text(
+            'فندق الفور سيزون',
+            style: TextStyle(fontFamily: "Cairo", fontWeight: FontWeight.bold),
+          ),
         ),
       ),
       FavoriteWidget(),
     ],
   ),
 );
+Widget button_media(IconData icon, void onpress) {
+  return IconButton(onPressed: () => onpress, icon: Icon(icon));
+}
 
 Widget button_section = Container(
   padding: EdgeInsets.only(top: 10, bottom: 20),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      _buildButtonColumn(Icons.phone, 'CALL'),
-      _buildButtonColumn(Icons.near_me, 'ROUTE'),
-      _buildButtonColumn(Icons.share, 'SHARE'),
-      _buildButtonColumn(Icons.share, 'SHARE')
+      _buildButtonColumn(
+          Icons.directions_car_filled_outlined, 'الاتجاهات', () {}),
+      _buildButtonColumn(Icons.call, 'اتصال', () {}),
+      _buildButtonColumn(Icons.save_outlined, 'حفظ', () {}),
+      _buildButtonColumn(Icons.share_location_outlined, 'مشاركة الموقع', () {})
     ],
   ),
 );
 
-Widget _buildButtonColumn(IconData icon, String lable) {
+Widget _buildButtonColumn(IconData icon, String lable, void onpress) {
   return Column(
     mainAxisSize: MainAxisSize.min,
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Icon(icon),
+      IconButton(
+        onPressed: () => onpress,
+        icon: Icon(icon),
+      ),
       Container(
         margin: const EdgeInsets.only(top: 8),
         child: Text(

@@ -66,10 +66,10 @@ class NextState extends State<Next> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     SizedBox(
-                        height: 350,
+                        height: 330,
                         child: Center(
                           child: Text(
-                            'اهلاً وسهلاً,أدخل رمز \nالتفعيل الذي سيصلك برسالة نصية الى الرقم\n ${phone}',
+                            'اهلاً وسهلاً,\nأدخل رمز التفعيل الذي سيصلك برسالة نصية الى البريد ${phone}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: "Cairo",
@@ -145,6 +145,9 @@ class NextState extends State<Next> {
                           ),
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      height: 100,
                     ),
                   ],
                 ),

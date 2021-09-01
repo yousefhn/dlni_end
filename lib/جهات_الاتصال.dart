@@ -25,19 +25,11 @@ class _notificationPageState extends State<notPage> {
         child: SafeArea(
           child: Scaffold(
               backgroundColor: Colors.transparent,
-              extendBodyBehindAppBar: true,
               body: NestedScrollView(
                 floatHeaderSlivers: true,
                 headerSliverBuilder: (context, innerBoxIsScrolled) => [
                   SliverAppBar(
-                    leading: IconButton(
-                      icon: Icon(Icons.navigate_next_outlined),
-                      iconSize: 30,
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                    ),
-                    // automaticallyImplyLeading: true,
+                    automaticallyImplyLeading: true,
                     centerTitle: true,
                     title: Text(
                       "جهات الاتصال ",
@@ -67,27 +59,28 @@ class _notificationPageState extends State<notPage> {
                         ),
                         margin: EdgeInsets.all(0),
                         child: ListTile(
-                            onTap: () {},
-                            title: Text(
-                              "من نحن",
-                              style: TextStyle(
-                                fontFamily: "Cairo",
-                                fontSize: 25,
-                              ),
+                          onTap: () {},
+                          title: Text(
+                            "من نحن",
+                            style: TextStyle(
+                              fontFamily: "Cairo",
+                              fontSize: 25,
                             ),
-                            trailing: IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => first()));
-                              },
-                              icon: Icon(
-                                Icons.navigate_next_outlined,
-                                color: Color(0xff6885e3),
-                                size: 30,
-                              ),
-                            )),
+                          ),
+                          trailing: IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => first()));
+                            },
+                            icon: Icon(
+                              Icons.navigate_next_outlined,
+                              color: Color(0xff6885e3),
+                              size: 30,
+                            ),
+                          ),
+                        ),
                       ),
                     );
                   },

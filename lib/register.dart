@@ -1,19 +1,20 @@
 import 'package:email_validator/email_validator.dart';
-import 'package:example/renext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-class reMyHomePage extends StatefulWidget {
-  reMyHomePage({Key? key, required this.title}) : super(key: key);
+import 'one/next.dart';
+
+class register extends StatefulWidget {
+  register({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<reMyHomePage> {
+class _MyHomePageState extends State<register> {
   TextEditingController _email = TextEditingController();
   TextEditingController _pass = TextEditingController();
 
@@ -381,9 +382,9 @@ class _MyHomePageState extends State<reMyHomePage> {
                                                             Navigator.pushReplacement(
                                                                 context,
                                                                 MaterialPageRoute(
-                                                                    builder: (context) =>
-                                                                        reNext(
-                                                                            ph: _email.text)));
+                                                                    builder: (context) => Next(
+                                                                        ph: _email
+                                                                            .text)));
                                                           },
                                                         ),
                                                         width: 100,
@@ -449,6 +450,20 @@ class _MyHomePageState extends State<reMyHomePage> {
                     ),
                     SizedBox(
                       height: 100,
+                      child: Center(
+                          child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('bjhvhjjjcjjjjjn'),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('fhfjvjh'))
+                          ],
+                        ),
+                      )),
                     ),
                   ],
                 ),

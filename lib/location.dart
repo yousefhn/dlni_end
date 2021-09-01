@@ -23,12 +23,11 @@ class _LocationPageState extends State<LocationPage> {
         child: SafeArea(
           child: Scaffold(
               backgroundColor: Colors.transparent,
-
               body: NestedScrollView(
                 floatHeaderSlivers: true,
                 headerSliverBuilder: (context, innerBoxIsScrolled) => [
                   SliverAppBar(
-
+                    automaticallyImplyLeading: false,
                     centerTitle: true,
                     title: Text(
                       "الأماكن ",
@@ -58,23 +57,25 @@ class _LocationPageState extends State<LocationPage> {
                         ),
                         margin: EdgeInsets.all(0),
                         child: ListTile(
-                            onTap: () {Navigator.push(
+                          onTap: () {
+                            Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => first()));},
-                            title: Text(
-                              "من نحن",
-                              style: TextStyle(
-                                fontFamily: "Cairo",
-                                fontSize: 25,
-                              ),
+                                    builder: (context) => first()));
+                          },
+                          title: Text(
+                            "من نحن",
+                            style: TextStyle(
+                              fontFamily: "Cairo",
+                              fontSize: 25,
                             ),
-                            trailing: Icon(
-                                Icons.navigate_next_outlined,
-                                color: Color(0xff6885e3),
-                                size: 30,
-                              ),
-                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.navigate_next_outlined,
+                            color: Color(0xff6885e3),
+                            size: 30,
+                          ),
+                        ),
                       ),
                     );
                   },

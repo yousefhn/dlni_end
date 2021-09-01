@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import 'aboutus.dart';
-import 'notification.dart';
 import 'one/login.dart';
 
 class Hs extends StatefulWidget {
@@ -43,6 +42,7 @@ class _HsState extends State<Hs> with TickerProviderStateMixin {
         child: SafeArea(
           child: Scaffold(
             appBar: AppBar(
+              automaticallyImplyLeading: false,
               centerTitle: true,
               title: Text(
                 'الحساب',
@@ -61,7 +61,8 @@ class _HsState extends State<Hs> with TickerProviderStateMixin {
                     SizedBox(
                       height: 230,
                       child: Lottie.asset(
-                        'assets/LottieLogo1.json',
+                        'assets/lo/1.json',
+                        repeat: true,
                         controller: _controller,
                         onLoaded: (composition) {
                           // Configure the AnimationController with the duration of the
@@ -108,49 +109,6 @@ class _HsState extends State<Hs> with TickerProviderStateMixin {
                             ),
                             title: Text(
                               "حسابي",
-                              style: TextStyle(
-                                fontFamily: "Cairo",
-                                fontSize: 25,
-                              ),
-                            ),
-                            trailing: Icon(
-                              Icons.navigate_next_outlined,
-                              color: Color(0xff6885e3),
-                              size: 30,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(20),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [Color(0xff6885e3), Color(0xffffffff)],
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                              stops: [0, 0.5]),
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white.withOpacity(0.4),
-                        ),
-                        margin: EdgeInsets.all(0),
-                        child: Padding(
-                          padding: EdgeInsets.all(0),
-                          child: ListTile(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          notificationPage()));
-                            },
-                            leading: Icon(
-                              Icons.notification_important_outlined,
-                              color: Color(0xff6885e3),
-                            ),
-                            title: Text(
-                              "اشعارات",
                               style: TextStyle(
                                 fontFamily: "Cairo",
                                 fontSize: 25,
@@ -244,7 +202,7 @@ class _HsState extends State<Hs> with TickerProviderStateMixin {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Text(
-                                              "تأكد من معلوماتك ",
+                                              "هل انت متأكد",
                                               style: TextStyle(
                                                   fontFamily: "Cairo"),
                                             ),
@@ -262,7 +220,8 @@ class _HsState extends State<Hs> with TickerProviderStateMixin {
                                                 child: Text(
                                                   'نعم',
                                                   style: TextStyle(
-                                                      fontFamily: "Cairo"),
+                                                      fontFamily: "Cairo",
+                                                      color: Colors.white),
                                                 ),
                                                 onPressed: () {
                                                   Navigator.pushReplacement(
@@ -276,17 +235,9 @@ class _HsState extends State<Hs> with TickerProviderStateMixin {
                                               ),
                                               width: 100,
                                               decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                    colors: [
-                                                      Color(0xff6885e3),
-                                                      Color(0xffffffff)
-                                                    ],
-                                                    begin:
-                                                        Alignment.bottomRight,
-                                                    end: Alignment.topLeft,
-                                                    stops: [0, 1]),
+                                                color: Color(0xff6885e3),
                                                 borderRadius:
-                                                    BorderRadius.circular(16),
+                                                    BorderRadius.circular(10),
                                               ),
                                             ),
                                             Container(
@@ -295,7 +246,8 @@ class _HsState extends State<Hs> with TickerProviderStateMixin {
                                                 child: Text(
                                                   'لا',
                                                   style: TextStyle(
-                                                      fontFamily: "Cairo"),
+                                                      fontFamily: "Cairo",
+                                                      color: Colors.white),
                                                 ),
                                                 onPressed: () {
                                                   Navigator.pop(context);
@@ -303,17 +255,9 @@ class _HsState extends State<Hs> with TickerProviderStateMixin {
                                               ),
                                               width: 100,
                                               decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                    colors: [
-                                                      Color(0xff6885e3),
-                                                      Color(0xffffffff)
-                                                    ],
-                                                    begin:
-                                                        Alignment.bottomRight,
-                                                    end: Alignment.topLeft,
-                                                    stops: [0, 1]),
+                                                color: Color(0xff6885e3),
                                                 borderRadius:
-                                                    BorderRadius.circular(16),
+                                                    BorderRadius.circular(10),
                                               ),
                                             ),
                                           ],
@@ -328,6 +272,43 @@ class _HsState extends State<Hs> with TickerProviderStateMixin {
                             ),
                             title: Text(
                               "تسجيل الخروج",
+                              style: TextStyle(
+                                fontFamily: "Cairo",
+                                fontSize: 25,
+                              ),
+                            ),
+                            trailing: Icon(
+                              Icons.navigate_next_outlined,
+                              color: Color(0xff6885e3),
+                              size: 30,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Color(0xff6885e3), Color(0xffffffff)],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              stops: [0, 0.5]),
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white.withOpacity(0.4),
+                        ),
+                        margin: EdgeInsets.all(0),
+                        child: Padding(
+                          padding: EdgeInsets.all(0),
+                          child: ListTile(
+                            onTap: () {},
+                            leading: Icon(
+                              Icons.share_outlined,
+                              color: Color(0xff6885e3),
+                            ),
+                            title: Text(
+                              "مشاركة التطبيق",
                               style: TextStyle(
                                 fontFamily: "Cairo",
                                 fontSize: 25,

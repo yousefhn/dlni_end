@@ -65,18 +65,18 @@ class NextState extends State<reNext> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
-                      'اهلاً وسهلاً,أدخل رمز \nالتفعيل الذي سيصلك برسالة نصية الى الرقم\n ${phone}',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: "Cairo",
-                        fontWeight: FontWeight.bold,
-                        fontSize: 35,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
                     SizedBox(
-                      height: 50,
+                      height: 330,
+                      child: Text(
+                        'اهلاً وسهلاً,\nأدخل رمز التفعيل الذي سيصلك برسالة نصية الى البريد ${phone}',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: "Cairo",
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(20),
@@ -118,15 +118,8 @@ class NextState extends State<reNext> {
                           Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                  colors: [
-                                    Color(0xff6885e3),
-                                    Color(0xffffffff)
-                                  ],
-                                  begin: Alignment.bottomRight,
-                                  end: Alignment.topLeft,
-                                  stops: [0.4, 2]),
-                              borderRadius: BorderRadius.circular(16),
+                              color: Color(0xff6885e3),
+                              borderRadius: BorderRadius.circular(10),
                             ),
                             child: RaisedButton(
                               elevation: 0,

@@ -35,6 +35,7 @@ class _FavoritePageState extends State<FavoritePage> {
                   floating: true,
                   snap: true,
                   excludeHeaderSemantics: true,
+                  automaticallyImplyLeading: false,
                   centerTitle: true,
                   title: Text(
                     "الاماكن المفضلة",

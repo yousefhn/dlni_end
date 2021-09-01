@@ -28,7 +28,10 @@ dependencies:
   curved_navigation_bar:
   introduction_screen:
   sms_autofill: 
-  lottie: 
+  lottie:
+  cupertino_icons:
+  email_validator:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

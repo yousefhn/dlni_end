@@ -13,6 +13,7 @@ class myacount extends StatefulWidget {
 class _myacountState extends State<myacount> {
   @override
   Widget build(BuildContext context) {
+    bool not = false;
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -75,132 +76,110 @@ class _myacountState extends State<myacount> {
                             child: Container(
                               width: 150,
                               decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                    colors: [
-                                      Color(0xff6885e3),
-                                      Color(0xffffffff)
-                                    ],
-                                    begin: Alignment.bottomRight,
-                                    end: Alignment.topLeft,
-                                    stops: [0.4, 2]),
+                                color: Color(0xff6885e3),
+                                borderRadius: BorderRadius.circular(10),
                                 border: Border(
                                     bottom: BorderSide(
-                                        color: Colors.white, width: 2),
+                                        color: Colors.white, width: 1),
                                     top: BorderSide(
-                                        color: Colors.white, width: 2),
+                                        color: Colors.white, width: 1),
                                     right: BorderSide(
-                                        color: Colors.white, width: 2),
+                                        color: Colors.white, width: 1),
                                     left: BorderSide(
-                                        color: Colors.white, width: 2)),
-                                borderRadius: BorderRadius.circular(16),
+                                        color: Colors.white, width: 1)),
                               ),
                               child: RaisedButton(
                                 color: Colors.transparent,
                                 elevation: 0,
                                 onPressed: () {
                                   showDialog(
-                                      context: context,
-                                      builder: (BuildContext context) {
-                                        return AlertDialog(
-                                          elevation: 0.8,
-                                          backgroundColor:
-                                              Colors.white.withOpacity(0.9),
-                                          actionsPadding:
-                                              EdgeInsets.only(bottom: 20),
-                                          contentPadding: EdgeInsets.only(
-                                            top: 0,
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        elevation: 0.8,
+                                        backgroundColor:
+                                            Colors.white.withOpacity(0.9),
+                                        actionsPadding:
+                                            EdgeInsets.only(bottom: 20),
+                                        contentPadding: EdgeInsets.only(
+                                          top: 0,
+                                        ),
+                                        contentTextStyle: TextStyle(
+                                            fontFamily: "Cairo",
+                                            fontSize: 20,
+                                            color: Colors.black),
+                                        content: Container(
+                                          height: 150,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Text("هل انت متاكد "),
+                                            ],
                                           ),
-                                          contentTextStyle: TextStyle(
-                                              fontFamily: "Cairo",
-                                              fontSize: 20,
-                                              color: Colors.black),
-                                          content: Container(
-                                            height: 150,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Text("هل انت متاكد "),
-                                              ],
-                                            ),
-                                          ),
-                                          actions: [
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Container(
-                                                  height: 30,
-                                                  child: FlatButton(
-                                                    child: Text(
-                                                      'نعم',
-                                                      style: TextStyle(
-                                                          fontFamily: "Cairo"),
-                                                    ),
-                                                    onPressed: () {
-                                                      Navigator.pushReplacement(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                              builder: (context) =>
-                                                                  reMyHomePage(
-                                                                      title:
-                                                                          "")));
-                                                    },
+                                        ),
+                                        actions: [
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30,
+                                                child: FlatButton(
+                                                  child: Text(
+                                                    'نعم',
+                                                    style: TextStyle(
+                                                        fontFamily: "Cairo",
+                                                        color: Colors.white),
                                                   ),
-                                                  width: 100,
-                                                  decoration: BoxDecoration(
-                                                    gradient: LinearGradient(
-                                                        colors: [
-                                                          Color(0xff6885e3),
-                                                          Color(0xffffffff)
-                                                        ],
-                                                        begin: Alignment
-                                                            .bottomRight,
-                                                        end: Alignment.topLeft,
-                                                        stops: [0, 1]),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            16),
-                                                  ),
+                                                  onPressed: () {
+                                                    Navigator.pushReplacement(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                reMyHomePage(
+                                                                    title:
+                                                                        "")));
+                                                  },
                                                 ),
-                                                Container(
-                                                  height: 30,
-                                                  child: FlatButton(
-                                                    child: Text(
-                                                      'لا',
-                                                      style: TextStyle(
-                                                          fontFamily: "Cairo"),
-                                                    ),
-                                                    onPressed: () {
-                                                      Navigator.pop(context);
-                                                    },
-                                                  ),
-                                                  width: 100,
-                                                  decoration: BoxDecoration(
-                                                    gradient: LinearGradient(
-                                                        colors: [
-                                                          Color(0xff6885e3),
-                                                          Color(0xffffffff)
-                                                        ],
-                                                        begin: Alignment
-                                                            .bottomRight,
-                                                        end: Alignment.topLeft,
-                                                        stops: [0, 1]),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            16),
-                                                  ),
+                                                width: 100,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xff6885e3),
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
                                                 ),
-                                              ],
-                                            )
-                                          ],
-                                        );
-                                      });
+                                              ),
+                                              Container(
+                                                height: 30,
+                                                child: FlatButton(
+                                                  child: Text(
+                                                    'لا',
+                                                    style: TextStyle(
+                                                        fontFamily: "Cairo",
+                                                        color: Colors.white),
+                                                  ),
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                ),
+                                                width: 100,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xff6885e3),
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      );
+                                    },
+                                  );
                                 },
                                 child: Text(
-                                  "تغيير رقم الهاتف",
+                                  "تغيير البريد",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: "Cairo",
@@ -226,11 +205,9 @@ class _myacountState extends State<myacount> {
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.white.withOpacity(0.4),
                         ),
-                        margin: EdgeInsets.all(0),
                         child: Padding(
                           padding: EdgeInsets.all(0),
-                          child: ListTile(
-                            onTap: () {},
+                          child: SwitchListTile(
                             title: Text(
                               "تفعيل الاشعارات",
                               style: TextStyle(
@@ -238,11 +215,12 @@ class _myacountState extends State<myacount> {
                                 fontSize: 25,
                               ),
                             ),
-                            trailing: Icon(
-                              Icons.navigate_next_outlined,
-                              color: Color(0xff6885e3),
-                              size: 30,
-                            ),
+                            value: not,
+                            onChanged: (val) {
+                              setState(() {
+                                not = val;
+                              });
+                            },
                           ),
                         ),
                       ),

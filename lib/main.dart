@@ -152,15 +152,8 @@ class _SearchBarDemoHomeState extends State<SearchBarDemoHome> {
                               ),
                               width: MediaQuery.of(context).size.width * 0.3,
                               decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                    colors: [
-                                      Color(0xff6885e3),
-                                      Color(0xffffffff)
-                                    ],
-                                    begin: Alignment.bottomRight,
-                                    end: Alignment.topLeft,
-                                    stops: [0, 1]),
-                                borderRadius: BorderRadius.circular(16),
+                                color: Color(0xff6885e3),
+                                borderRadius: BorderRadius.circular(10),
                               ),
                             ),
                             Container(
@@ -178,15 +171,8 @@ class _SearchBarDemoHomeState extends State<SearchBarDemoHome> {
                               ),
                               width: MediaQuery.of(context).size.width * 0.3,
                               decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                    colors: [
-                                      Color(0xff6885e3),
-                                      Color(0xffffffff)
-                                    ],
-                                    begin: Alignment.bottomRight,
-                                    end: Alignment.topLeft,
-                                    stops: [0, 1]),
-                                borderRadius: BorderRadius.circular(16),
+                                color: Color(0xff6885e3),
+                                borderRadius: BorderRadius.circular(10),
                               ),
                             ),
                           ],
@@ -195,7 +181,7 @@ class _SearchBarDemoHomeState extends State<SearchBarDemoHome> {
                     );
                   });
             },
-            icon: const Icon(Icons.share_location_sharp),
+            icon: Icon(Icons.share_location_sharp),
           ),
         ],
       ),
